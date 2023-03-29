@@ -47,5 +47,6 @@ public class ProdutoV1Controller {
                 .andDo(print())
                 .andReturn().getResponse().getContentAsString();
         //Produto produtoModificado = objectMapper.readValue(produtoModificadoJSONString, Produto objectMapper);
+        //assertEquals("Chiclete", produtoModificado.getNome());
     }
 }

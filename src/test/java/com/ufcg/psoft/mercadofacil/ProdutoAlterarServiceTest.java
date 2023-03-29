@@ -55,9 +55,12 @@ public class ProdutoAlterarServiceTest {
 		//Arrange
 		produto.setNome("Nome Produto Alterado");
 		//Act
-		Produto resultado = driver.alterar(produto);
+		RuntimeException thrown = assertThrows(
+				RuntimeException.class,
+				() -> driver.alterar(produto)
+		);
 		//Assert
-		assertEquals("Nome Produto Alterado", resultado.getNome());
+		assertEquals("Código de barras inválido!", thrown.getMessage());
 	}
 
 	@Test
@@ -78,7 +81,11 @@ public class ProdutoAlterarServiceTest {
 	@DisplayName("Verifica se o codigo de barras é válido")
 	void verificaCodigoBarrasNaoEhValido() {
 		//Assert
-		assertEquals(true, true);
+		RuntimeException thrown = assertThrows(
+				RuntimeException.class,
+				() -> driver.alterar(produto)
+		);
+		assertEquals("Código de barras inválido!", thrown.getMessage());
 	}
 
 }

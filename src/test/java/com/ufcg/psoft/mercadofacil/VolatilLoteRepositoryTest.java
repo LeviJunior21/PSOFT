@@ -262,7 +262,7 @@ class VolatilLoteRepositoryTest {
 
         driver.delete(lote);
 
-        assertEquals(driver.lotes.size(), 2);
+        assertEquals(driver.findAll().size(), 2);
     }
 
     @Test

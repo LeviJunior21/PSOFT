@@ -14,22 +14,22 @@ public class ProdutoAlterarImplService implements ProdutoAlterarService {
             throw new RuntimeException("Preco invalido!");
         } else
         if (validaCodigoBarra(produtoAlterado.getCodigoBarra()) == false) {
-            throw new RuntimeException("Preco invalido!");
+            throw new RuntimeException("Código de barras inválido!");
         }
         return produtoRepository.update(produtoAlterado);
     }
 
-    private boolean validaCodigoBarra(String codigoBarra) {
+    public static boolean validaCodigoBarra(String codigoBarra) {
         int soma = 0;
         boolean resultado = false;
 
         String[] codigo = codigoBarra.split("");
-        for (int i = codigo.length - 2; i >= 1 ; i--) {
-            if (i % 2 == 0) soma += 3 * Integer.parseInt(codigo[i]);
-            else soma += Integer.parseInt(codigo[i - 1]);
+        for (int i = codigo.length - 2; i >= 1 ; i-=2) {
+            soma += 3 * Integer.parseInt(codigo[i]);
+            soma += Integer.parseInt(codigo[i - 1]);
         }
-
-        if ((soma + Integer.parseInt(codigo[12])) % 10 != 0) {
+        soma = soma + Integer.parseInt(codigo[codigo.length - 1]);
+        if (soma % 10 == 0) {
             resultado = true;
         }
         return resultado;
