@@ -1,16 +1,14 @@
-package com.ufcg.psoft.mercadofacil;
+package com.ufcg.psoft.mercadofacil.repository;
 
 import com.ufcg.psoft.mercadofacil.Repository.LoteRepository;
+import com.ufcg.psoft.mercadofacil.model.Lote;
+import com.ufcg.psoft.mercadofacil.model.Produto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import com.ufcg.psoft.mercadofacil.Repository.VolatilLoteRepository;
-import com.ufcg.psoft.mercadofacil.Services.Lote;
-import com.ufcg.psoft.mercadofacil.Services.Produto;
 
 import static org.junit.jupiter.api.Assertions.*;
 

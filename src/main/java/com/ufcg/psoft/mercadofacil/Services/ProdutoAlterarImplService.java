@@ -1,6 +1,7 @@
 package com.ufcg.psoft.mercadofacil.Services;
 
 import com.ufcg.psoft.mercadofacil.Repository.ProdutoRepository;
+import com.ufcg.psoft.mercadofacil.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

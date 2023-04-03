@@ -3,7 +3,7 @@ import java.util.List;
 
 public interface LoteRepository<T, ID> {
     T save(T lote);
-    T find(ID id);
+    T find(Long id);
 
     List<T> findAll();
     T update(T lote);
